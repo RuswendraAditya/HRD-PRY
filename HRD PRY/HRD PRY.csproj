@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D306602E-3084-46CD-8490-D1825D457B43}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HRD_PRY</RootNamespace>
+    <AssemblyName>HRD PRY</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>PRY LOGO.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoUpdater.NET, Version=1.6.4.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autoupdater.NET.Official.1.6.4\lib\net45\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Core.WinForms, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Data.WinForms, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Grid.Base, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Grid.Base.18.2.0.44\lib\net46\Syncfusion.Grid.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Grid.Windows, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Grid.Windows.18.2.0.44\lib\net46\Syncfusion.Grid.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.GridCommon.WinForms, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Licensing, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.18.2.0.44\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDataGrid.WinForms, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfDataGridConverter.WinForms, Version=18.2400.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfInput.WinForms, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.SfListView.WinForms, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Shared.Base, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Base.18.2.0.44\lib\net46\Syncfusion.Shared.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Windows, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Windows.18.2.0.44\lib\net46\Syncfusion.Shared.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SpellChecker.Base, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SpellChecker.Base.18.2.0.44\lib\net46\Syncfusion.SpellChecker.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Base, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Tools.Base.18.2.0.44\lib\net46\Syncfusion.Tools.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.Windows, Version=18.2460.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Tools.Windows.18.2.0.44\lib\net46\Syncfusion.Tools.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.XlsIO.Base, Version=18.2400.0.44, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attendance\Attedance_Photo.cs" />
+    <Compile Include="Attendance\FrmAttendancePhotoInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Attendance\FrmAttendancePhotoInquiry.Designer.cs">
+      <DependentUpon>FrmAttendancePhotoInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance\FrmAttendanceInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Attendance\FrmAttendanceInquiry.Designer.cs">
+      <DependentUpon>FrmAttendanceInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\FrmLocationAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\FrmLocationAdd.Designer.cs">
+      <DependentUpon>FrmLocationAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\FrmLocationEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\FrmLocationEdit.Designer.cs">
+      <DependentUpon>FrmLocationEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personnel Management\FrmPersonnelInformationEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personnel Management\FrmPersonnelInformationEdit.Designer.cs">
+      <DependentUpon>FrmPersonnelInformationEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personnel Management\FrmPersonnelnformationAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personnel Management\FrmPersonnelnformationAdd.Designer.cs">
+      <DependentUpon>FrmPersonnelnformationAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\ClsUtil.cs" />
+    <Compile Include="Util\ConnUtil.cs" />
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMainMenu.Designer.cs">
+      <DependentUpon>FrmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\FrmLocationInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\FrmLocationInquiry.Designer.cs">
+      <DependentUpon>FrmLocationInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\EncodeDecode.cs" />
+    <Compile Include="Util\MsgBoxUtil.cs" />
+    <Compile Include="Personnel Management\FrmPersonnelnformationInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personnel Management\FrmPersonnelnformationInquiry.Designer.cs">
+      <DependentUpon>FrmPersonnelnformationInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Attendance\FrmAttendancePhotoInquiry.resx">
+      <DependentUpon>FrmAttendancePhotoInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Attendance\FrmAttendanceInquiry.resx">
+      <DependentUpon>FrmAttendanceInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMainMenu.resx">
+      <DependentUpon>FrmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\FrmLocationAdd.resx">
+      <DependentUpon>FrmLocationAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\FrmLocationEdit.resx">
+      <DependentUpon>FrmLocationEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\FrmLocationInquiry.resx">
+      <DependentUpon>FrmLocationInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnel Management\FrmPersonnelInformationEdit.resx">
+      <DependentUpon>FrmPersonnelInformationEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnel Management\FrmPersonnelnformationAdd.resx">
+      <DependentUpon>FrmPersonnelnformationAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnel Management\FrmPersonnelnformationInquiry.resx">
+      <DependentUpon>FrmPersonnelnformationInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoPRY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PRY Logo Only.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PRY Logo Only JPG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PRY Logo OnlyJPG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PRY LOGO.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
