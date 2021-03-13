@@ -26,12 +26,10 @@ namespace HRD_PRY.Attendance
             InitializeComponent();
 
             Id = id;
-            // Initialize the ListView.
-            lvwBooks.SmallImageList = imlSmallIcons;
-            lvwBooks.LargeImageList = imlLargeIcons;
+            listViewImage.LargeImageList = listImage;
 
             // Make the column headers.
-            lvwBooks.MakeColumnHeaders(
+            listViewImage.MakeColumnHeaders(
                 "Upload Date", 230, HorizontalAlignment.Left
               );
             getImage();
@@ -47,8 +45,6 @@ namespace HRD_PRY.Attendance
             foreach (DataRow row in dtImage.Rows)
             {
                 i = i + 1;
-
-
                 try
 
                 {
@@ -58,13 +54,13 @@ namespace HRD_PRY.Attendance
 
                         Bitmap bm = new Bitmap(Image.FromStream(ms));
                         float source_aspect = bm.Width / (float)bm.Height;
-                        AddImageToImageList(imlLargeIcons,
+                        AddImageToImageList(listImage,
                                 bm,i.ToString(),
-                                imlLargeIcons.ImageSize.Width,
-                                imlLargeIcons.ImageSize.Height);
+                                listImage.ImageSize.Width,
+                                listImage.ImageSize.Height);
                     }
 
-                    lvwBooks.AddRow(i.ToString(),row["upload_date"].ToString());  // Year
+                    listViewImage.AddRow(i.ToString(),row["upload_date"].ToString());  // Year
 
 
                 }
@@ -76,7 +72,7 @@ namespace HRD_PRY.Attendance
                     MsgBoxUtil.MsgError(ex.Message.ToString());
 
                 }
-                lvwBooks.View = View.LargeIcon;
+                listViewImage.View = View.LargeIcon;
             }
         }
 

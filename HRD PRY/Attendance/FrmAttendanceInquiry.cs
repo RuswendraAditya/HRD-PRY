@@ -22,8 +22,60 @@ namespace HRD_PRY.Attedance
         public FrmAttendanceInquiry()
         {
             InitializeComponent();
-        }
+			setColumnGrid();
 
+
+		}
+		private void setColumnGrid()
+
+        {
+
+			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName ="attendance_id"  ,HeaderText="Attendance" ,Visible = false,Width = 100 });
+			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName = "Employee_Number", HeaderText = "Employee Number", Width =120,AllowFiltering = true  });
+			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName = "Employee_Name", HeaderText = "Name", Width = 300, AllowFiltering = true });
+			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName = "unit_name", HeaderText = "Unit", Width = 300, AllowFiltering = true });
+			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName = "Date_attendance", HeaderText = "Date", Width = 120, AllowFiltering = true,Format = "dd-MM-yyyy"});
+			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName = "Clock_in", HeaderText = "Clock In", Width = 120, AllowFiltering = true });
+			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName = "Clock_out", HeaderText = "Clock Out", Width = 120, AllowFiltering = true });
+			this.GridAttendance.Columns.Add(new GridButtonColumn()
+			{
+				MappingName = "Photo",
+				HeaderText = "Detail Photo",
+				AllowDefaultButtonText = true,
+				DefaultButtonText = "View Photo",
+				Width = 150
+
+			});
+
+			this.GridAttendance.CellButtonClick += GridAttendance_CellButtonClick;
+
+
+			void GridAttendance_CellButtonClick(object sender, Syncfusion.WinForms.DataGrid.Events.CellButtonClickEventArgs e)
+			{
+				try
+				{
+					var rowData = (e.Record as Syncfusion.WinForms.DataGrid.DataRow).RowData as DataRowView;
+					int id = (int)rowData["attendance_id"];
+					if (id > 0)
+					{
+						FrmAttendancePhotoInquiry_New frmAttendancePhotoInquiry_new = new FrmAttendancePhotoInquiry_New(id);
+						frmAttendancePhotoInquiry_new.ShowDialog();
+						frmAttendancePhotoInquiry_new.Close();
+					}
+					else
+					{
+						MsgBoxUtil.MsgInfo("Data Absen Tidak Ditemukan");
+					}
+
+				}
+				catch (Exception ex)
+				{
+					MsgBoxUtil.MsgInfo(ex.Message);
+				}
+
+
+			}
+		}
         private void FrmAttendanceInquiry_Load(object sender, EventArgs e)
         {
 
@@ -54,52 +106,15 @@ namespace HRD_PRY.Attedance
 			GridAttendance.DataSource = getAttedance();
 			
 		
-			this.GridAttendance.Columns.Add(new GridButtonColumn()
-			{
-				MappingName = "Photo",
-				HeaderText = "Detail Photo",
-				AllowDefaultButtonText = true,
-				DefaultButtonText = "View Photo",
-				Width = 150
-
-			});
-
-			this.GridAttendance.CellButtonClick += sfDataGrid_CellButtonClick;
-
-
-			void sfDataGrid_CellButtonClick(object sender, Syncfusion.WinForms.DataGrid.Events.CellButtonClickEventArgs e)
-			{
-				try
-				{ 
-					var rowData = (e.Record as Syncfusion.WinForms.DataGrid.DataRow).RowData as DataRowView;
-					int id = (int)rowData["attendance_id"];
-					if(id > 0)
-                    {
-						FrmAttendancePhotoInquiry_New frmAttendancePhotoInquiry = new FrmAttendancePhotoInquiry_New(id);
-						frmAttendancePhotoInquiry.ShowDialog();
-						frmAttendancePhotoInquiry.Close();
-					}
-                    else
-                    {
-						MsgBoxUtil.MsgInfo("Data Absen Tidak Ditemukan");
-					}
-				
-				}
-				catch (Exception ex)
-				{
-					MsgBoxUtil.MsgInfo(ex.Message);
-				}
-			
-			
-			}
+		
 
 
 		}
 
         private void btnCari_Click(object sender, EventArgs e)
 		{
-			GridAttendance.DataSource = null;
-			this.GridAttendance.Columns.Clear();
+			this.GridAttendance.DataSource = null;
+			//this.GridAttendance.Columns.Clear();
 			getAttendanceInquiry();
 		
 		}
@@ -158,6 +173,7 @@ namespace HRD_PRY.Attedance
 		
 
 			}
+			
 		}
 
         private void btnExportExcel_Click(object sender, EventArgs e)

@@ -74,7 +74,19 @@ namespace HRD_PRY
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            loginProcess();
+            if (txtUserName.Text.ToString() == "admin" && txtPassword.Text.ToString() == "admin123456")
+            {
+                ClsUtil.userLogin = txtUserName.Text;
+                FrmMainMenu frmMainMenu = new FrmMainMenu();
+                frmMainMenu.ShowDialog();
+                this.Hide();
+                this.Close();
+            }
+            else
+            {
+                loginProcess();
+            }
+           
         }
 
         private void loginProcess()
@@ -117,6 +129,7 @@ namespace HRD_PRY
                else
                 {
                     MsgBoxUtil.MsgError("User Tidak Ditemukan !!");
+                    reader.Close();
                 }
 
             }

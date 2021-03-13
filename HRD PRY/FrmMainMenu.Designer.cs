@@ -31,6 +31,7 @@ namespace HRD_PRY
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainMenu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panelMenu2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.btnLocationInquiry = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@ namespace HRD_PRY
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelMenu2.SuspendLayout();
             this.panelMenu1.SuspendLayout();
@@ -65,6 +65,22 @@ namespace HRD_PRY
             this.panel1.Size = new System.Drawing.Size(296, 764);
             this.panel1.TabIndex = 0;
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Vijaya", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnExit.Location = new System.Drawing.Point(0, 382);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(296, 59);
+            this.btnExit.TabIndex = 3;
+            this.btnExit.Text = "Log Off(Exit)";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // panelMenu2
             // 
             this.panelMenu2.Controls.Add(this.button2);
@@ -80,7 +96,7 @@ namespace HRD_PRY
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
             this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Vijaya", 13.8F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(0, 42);
             this.button2.Name = "button2";
@@ -95,7 +111,7 @@ namespace HRD_PRY
             this.btnLocationInquiry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
             this.btnLocationInquiry.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLocationInquiry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLocationInquiry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLocationInquiry.Font = new System.Drawing.Font("Vijaya", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnLocationInquiry.ForeColor = System.Drawing.Color.White;
             this.btnLocationInquiry.Location = new System.Drawing.Point(0, 0);
             this.btnLocationInquiry.Name = "btnLocationInquiry";
@@ -110,7 +126,7 @@ namespace HRD_PRY
             // 
             this.btnMasterData.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMasterData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMasterData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMasterData.Font = new System.Drawing.Font("Vijaya", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnMasterData.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnMasterData.Location = new System.Drawing.Point(0, 236);
             this.btnMasterData.Name = "btnMasterData";
@@ -136,7 +152,7 @@ namespace HRD_PRY
             this.btnTimeManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
             this.btnTimeManagement.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTimeManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimeManagement.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimeManagement.Font = new System.Drawing.Font("Vijaya", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnTimeManagement.ForeColor = System.Drawing.Color.White;
             this.btnTimeManagement.Location = new System.Drawing.Point(0, 42);
             this.btnTimeManagement.Name = "btnTimeManagement";
@@ -152,7 +168,7 @@ namespace HRD_PRY
             this.btnPersonnelInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(64)))), ((int)(((byte)(122)))));
             this.btnPersonnelInformation.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPersonnelInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPersonnelInformation.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPersonnelInformation.Font = new System.Drawing.Font("Vijaya", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnPersonnelInformation.ForeColor = System.Drawing.Color.White;
             this.btnPersonnelInformation.Location = new System.Drawing.Point(0, 0);
             this.btnPersonnelInformation.Name = "btnPersonnelInformation";
@@ -167,7 +183,7 @@ namespace HRD_PRY
             // 
             this.btnPersonelManagement.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPersonelManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPersonelManagement.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPersonelManagement.Font = new System.Drawing.Font("Vijaya", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnPersonelManagement.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnPersonelManagement.Location = new System.Drawing.Point(0, 92);
             this.btnPersonelManagement.Name = "btnPersonelManagement";
@@ -204,22 +220,6 @@ namespace HRD_PRY
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(1417, 764);
             this.panelChildForm.TabIndex = 1;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.YellowGreen;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnExit.Location = new System.Drawing.Point(0, 382);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(296, 59);
-            this.btnExit.TabIndex = 3;
-            this.btnExit.Text = "Log Off(Exit)";
-            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FrmMainMenu
             // 
