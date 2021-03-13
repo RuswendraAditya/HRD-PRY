@@ -101,6 +101,12 @@
     <Compile Include="Attendance\FrmAttendanceInquiry.Designer.cs">
       <DependentUpon>FrmAttendanceInquiry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Attendance\FrmAttendancePhotoInquiry_New.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Attendance\FrmAttendancePhotoInquiry_New.Designer.cs">
+      <DependentUpon>FrmAttendancePhotoInquiry_New.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master\FrmLocationAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,7 @@
       <DependentUpon>FrmLocationInquiry.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\EncodeDecode.cs" />
+    <Compile Include="Util\ListViewExtensions.cs" />
     <Compile Include="Util\MsgBoxUtil.cs" />
     <Compile Include="Personnel Management\FrmPersonnelnformationInquiry.cs">
       <SubType>Form</SubType>
@@ -160,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Attendance\FrmAttendanceInquiry.resx">
       <DependentUpon>FrmAttendanceInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Attendance\FrmAttendancePhotoInquiry_New.resx">
+      <DependentUpon>FrmAttendancePhotoInquiry_New.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

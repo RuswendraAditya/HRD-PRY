@@ -35,6 +35,7 @@ namespace HRD_PRY.Attedance
             this.label1 = new System.Windows.Forms.Label();
             this.btnCari = new Syncfusion.WinForms.Controls.SfButton();
             this.btnExportExcel = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDownloadPhoto = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.GridAttendance)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,11 +115,29 @@ namespace HRD_PRY.Attedance
             this.btnExportExcel.UseVisualStyleBackColor = false;
             this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
             // 
+            // btnDownloadPhoto
+            // 
+            this.btnDownloadPhoto.AccessibleName = "Button";
+            this.btnDownloadPhoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDownloadPhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(109)))), ((int)(((byte)(254)))));
+            this.btnDownloadPhoto.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDownloadPhoto.ForeColor = System.Drawing.Color.White;
+            this.btnDownloadPhoto.Location = new System.Drawing.Point(12, 737);
+            this.btnDownloadPhoto.Name = "btnDownloadPhoto";
+            this.btnDownloadPhoto.Size = new System.Drawing.Size(176, 35);
+            this.btnDownloadPhoto.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(109)))), ((int)(((byte)(254)))));
+            this.btnDownloadPhoto.Style.ForeColor = System.Drawing.Color.White;
+            this.btnDownloadPhoto.TabIndex = 83;
+            this.btnDownloadPhoto.Text = "Download Photo";
+            this.btnDownloadPhoto.UseVisualStyleBackColor = false;
+            this.btnDownloadPhoto.Click += new System.EventHandler(this.btnDownloadPhoto_Click);
+            // 
             // FrmAttendanceInquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1582, 789);
+            this.Controls.Add(this.btnDownloadPhoto);
             this.Controls.Add(this.btnExportExcel);
             this.Controls.Add(this.btnCari);
             this.Controls.Add(this.dtPeriod);
@@ -142,5 +161,6 @@ namespace HRD_PRY.Attedance
         private System.Windows.Forms.Label label1;
         private Syncfusion.WinForms.Controls.SfButton btnCari;
         private Syncfusion.WinForms.Controls.SfButton btnExportExcel;
+        private Syncfusion.WinForms.Controls.SfButton btnDownloadPhoto;
     }
 }

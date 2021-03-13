@@ -8,10 +8,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataRow = System.Data.DataRow;
 
 namespace HRD_PRY.Attedance
 {
@@ -73,7 +75,7 @@ namespace HRD_PRY.Attedance
 					int id = (int)rowData["attendance_id"];
 					if(id > 0)
                     {
-						FrmAttendancePhotoInquiry frmAttendancePhotoInquiry = new FrmAttendancePhotoInquiry(id);
+						FrmAttendancePhotoInquiry_New frmAttendancePhotoInquiry = new FrmAttendancePhotoInquiry_New(id);
 						frmAttendancePhotoInquiry.ShowDialog();
 						frmAttendancePhotoInquiry.Close();
 					}
@@ -162,5 +164,93 @@ namespace HRD_PRY.Attedance
         {
 			ClsUtil.DownloadXLs(GridAttendance);
         }
-    }
+
+        private void btnDownloadPhoto_Click(object sender, EventArgs e)
+        {
+			var folderBrowserDialog1 = new FolderBrowserDialog();
+
+			// Show the FolderBrowserDialog.
+			DialogResult result = folderBrowserDialog1.ShowDialog();
+			if (result == DialogResult.OK)
+			{
+				string folderName = folderBrowserDialog1.SelectedPath;
+				saveImageToFolder(folderName);
+			  }
+
+
+		}
+
+		private void saveImageToFolder(string folderName)
+        {
+            try
+            {
+				string folder = folderName + "/" + dtPeriod.Value.ToString("dd-MMM-yyyy");
+				DataTable dtPhoto = getImageString();
+				if (dtPhoto.Rows.Count > 0)
+				{
+					string employee_number_temp = "";
+					int photoSeq = 0;
+					if (Directory.Exists(folder))
+					{
+						clearFolder(folder);
+					}
+					
+					foreach (DataRow row in dtPhoto.Rows)
+					{
+						photoSeq = photoSeq + 1;
+						string employee_name_number = row["employee_number"] + "_" + row["employee_name"];
+
+						string folderfinal = folder + "/" + employee_name_number;
+						if (!Directory.Exists(folderfinal))
+						{
+							Directory.CreateDirectory(folderfinal);
+						}
+
+						string filepath = folderfinal + "/" + row["employee_number"] + "_" + photoSeq.ToString() + ".jpeg";
+
+
+						var bytess = Convert.FromBase64String(row["image_string"].ToString());
+						using (var imageFile = new FileStream(filepath, FileMode.Create))
+						{
+							imageFile.Write(bytess, 0, bytess.Length);
+							imageFile.Flush();
+						}
+						employee_number_temp = row["employee_number"].ToString();
+					}
+
+				}
+			}
+            catch (Exception ex)
+            {
+
+				MsgBoxUtil.MsgError(ex.Message.ToString());
+            }
+			
+        }
+		private void clearFolder(string FolderName)
+		{
+			Directory.Delete(FolderName, true);
+		}
+		private DataTable getImageString()
+		{
+			DataTable dt = new DataTable();
+
+
+
+			string query = @"SELECT ISNULL(att.attendance_id,0) attendance_id,Employee_Number,Employee_Name, photo.* FROM Employees emp left join Attendance att
+							on emp.Employee_id = att.Employee_id LEFT JOIN MST_UNIT unit on unit.unit_id = emp.unit_id  JOIN Attendance_Photo photo
+							on photo.Attendance_id = att.Attendance_id
+							where ISNULL(att.Date_attendance,@date) = @date";
+			using (SqlCommand cmd = new SqlCommand(query, ConnUtil.connection))
+			{
+				cmd.Parameters.AddWithValue("@date", dtPeriod.Value.ToShortDateString());
+				using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+				{
+					da.Fill(dt);
+				}
+			}
+
+			return dt;
+		}
+	}
 }
