@@ -32,11 +32,13 @@ namespace HRD_PRY.Attedance
 
 			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName ="attendance_id"  ,HeaderText="Attendance" ,Visible = false,Width = 100 });
 			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName = "Employee_Number", HeaderText = "Employee Number", Width =120,AllowFiltering = true  });
-			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName = "Employee_Name", HeaderText = "Name", Width = 300, AllowFiltering = true });
-			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName = "unit_name", HeaderText = "Unit", Width = 300, AllowFiltering = true });
+			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName = "Employee_Name", HeaderText = "Name", Width =250, AllowFiltering = true });
+			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName = "unit_name", HeaderText = "Unit", Width = 250, AllowFiltering = true });
 			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName = "Date_attendance", HeaderText = "Date", Width = 120, AllowFiltering = true,Format = "dd-MM-yyyy"});
 			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName = "Clock_in", HeaderText = "Clock In", Width = 120, AllowFiltering = true });
 			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName = "Clock_out", HeaderText = "Clock Out", Width = 120, AllowFiltering = true });
+			this.GridAttendance.Columns.Add(new GridTextColumn() { MappingName = "Duration", HeaderText = "Duration", Width = 120, AllowFiltering = true });
+
 			this.GridAttendance.Columns.Add(new GridButtonColumn()
 			{
 				MappingName = "Photo",
@@ -86,7 +88,7 @@ namespace HRD_PRY.Attedance
 
 
 
-			string query = @"SELECT ISNULL(att.attendance_id,0) attendance_id,Employee_Number,Employee_Name, unit.unit_name, att.Date_attendance,att.Clock_in,att.Clock_out FROM Employees emp left join Attendance att
+			string query = @"SELECT ISNULL(att.attendance_id,0) attendance_id,Employee_Number,Employee_Name, unit.unit_name, att.Date_attendance,att.Clock_in,att.Clock_out,ISNULL(CONVERT(varchar(5), DATEADD(minute, DATEDIFF(MINUTE,  Clock_in,clock_out), 0), 114),'') Duration FROM Employees emp left join Attendance att
 							on emp.Employee_id = att.Employee_id LEFT JOIN MST_UNIT unit on unit.unit_id = emp.unit_id
 							where ISNULL(att.Date_attendance,@dateAtt) = @dateAtt";
 			using (SqlCommand cmd = new SqlCommand(query, ConnUtil.connection))
@@ -140,7 +142,7 @@ namespace HRD_PRY.Attedance
 			if (e.Column.MappingName == "Employee_Name")
 			{
 				e.Column.HeaderText = "Employee Name";
-				e.Column.Width = 300;
+				e.Column.Width = 2400;
 				e.Column.AllowFiltering = true;
 
 			}
@@ -148,7 +150,7 @@ namespace HRD_PRY.Attedance
 			if (e.Column.MappingName == "unit_name")
 			{
 				e.Column.HeaderText = "Unit";
-				e.Column.Width = 300;
+				e.Column.Width = 150;
 				e.Column.AllowFiltering = true;
 
 			}
@@ -173,7 +175,14 @@ namespace HRD_PRY.Attedance
 		
 
 			}
-			
+			if (e.Column.MappingName == "Duration")
+			{
+				e.Column.HeaderText = "Duration";
+				e.Column.Width = 100;
+
+
+			}
+
 		}
 
         private void btnExportExcel_Click(object sender, EventArgs e)
@@ -268,5 +277,10 @@ namespace HRD_PRY.Attedance
 
 			return dt;
 		}
-	}
+
+        private void btnDownload_Click(object sender, EventArgs e)
+        {
+			ClsUtil.DownloadXLs(GridAttendance);
+		}
+    }
 }

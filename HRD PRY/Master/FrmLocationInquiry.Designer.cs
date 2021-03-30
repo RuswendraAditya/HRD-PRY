@@ -41,9 +41,10 @@ namespace HRD_PRY.Master
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(643, 25);
+            this.label1.Location = new System.Drawing.Point(482, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 25);
+            this.label1.Size = new System.Drawing.Size(127, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Location Master";
             // 
@@ -54,12 +55,11 @@ namespace HRD_PRY.Master
             this.GridLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GridLocation.Location = new System.Drawing.Point(13, 54);
-            this.GridLocation.Margin = new System.Windows.Forms.Padding(4);
+            this.GridLocation.Location = new System.Drawing.Point(10, 44);
             this.GridLocation.Name = "GridLocation";
             this.GridLocation.PreviewRowHeight = 35;
             this.GridLocation.SelectionUnit = Syncfusion.WinForms.DataGrid.Enums.SelectionUnit.Cell;
-            this.GridLocation.Size = new System.Drawing.Size(1211, 445);
+            this.GridLocation.Size = new System.Drawing.Size(900, 362);
             this.GridLocation.Style.CellStyle.Font.Facename = "Microsoft YaHei";
             this.GridLocation.Style.CellStyle.Font.Size = 12F;
             this.GridLocation.Style.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
@@ -74,9 +74,10 @@ namespace HRD_PRY.Master
             this.btnAddLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(109)))), ((int)(((byte)(254)))));
             this.btnAddLocation.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddLocation.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddLocation.Location = new System.Drawing.Point(13, 506);
+            this.btnAddLocation.Location = new System.Drawing.Point(10, 411);
+            this.btnAddLocation.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddLocation.Name = "btnAddLocation";
-            this.btnAddLocation.Size = new System.Drawing.Size(135, 50);
+            this.btnAddLocation.Size = new System.Drawing.Size(101, 41);
             this.btnAddLocation.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(109)))), ((int)(((byte)(254)))));
             this.btnAddLocation.Style.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddLocation.TabIndex = 42;
@@ -90,10 +91,10 @@ namespace HRD_PRY.Master
             this.btnExportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.btnExportExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnExportExcel.Location = new System.Drawing.Point(1099, 512);
-            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(5);
+            this.btnExportExcel.Location = new System.Drawing.Point(824, 415);
+            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(4);
             this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(115, 42);
+            this.btnExportExcel.Size = new System.Drawing.Size(86, 34);
             this.btnExportExcel.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.btnExportExcel.Style.Image = global::HRD_PRY.Properties.Resources.excel;
             this.btnExportExcel.TabIndex = 60;
@@ -103,15 +104,16 @@ namespace HRD_PRY.Master
             // 
             // FrmLocationInquiry
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1237, 568);
+            this.ClientSize = new System.Drawing.Size(928, 462);
             this.Controls.Add(this.btnExportExcel);
             this.Controls.Add(this.btnAddLocation);
             this.Controls.Add(this.GridLocation);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLocationInquiry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Location Master";

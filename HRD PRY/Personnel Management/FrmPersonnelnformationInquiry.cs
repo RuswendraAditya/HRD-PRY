@@ -85,7 +85,7 @@ namespace HRD_PRY
             if (e.Column.MappingName == "Employee_Number")
             {
                 e.Column.HeaderText = "Employee Number";
-                e.Column.Width = 200;
+                e.Column.Width = 160;
                 e.Column.AllowFiltering = true;
 
             }
@@ -93,7 +93,7 @@ namespace HRD_PRY
             if (e.Column.MappingName == "Employee_Name")
             {
                 e.Column.HeaderText = "Employee Name";
-                e.Column.Width = 300;
+                e.Column.Width = 200;
                 e.Column.AllowFiltering = true;
 
             }

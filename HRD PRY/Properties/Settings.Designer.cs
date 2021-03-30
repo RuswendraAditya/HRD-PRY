@@ -27,9 +27,22 @@ namespace HRD_PRY.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-9MQH7F0U;Initial Catalog=PryHRD_Database;User ID=wendra123;Pas" +
             "sword=wendra123;")]
-        public string connString {
+        public string connStringDev {
             get {
-                return ((string)(this["connString"]));
+                return ((string)(this["connStringDev"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.0.16;Initial Catalog=PryHRD_Database;User ID=pry.user;Passwor" +
+            "d=pry4dm1nus3r;")]
+        public string connStringProd {
+            get {
+                return ((string)(this["connStringProd"]));
+            }
+            set {
+                this["connStringProd"] = value;
             }
         }
     }
