@@ -54,6 +54,16 @@ namespace HRD_PRY.Util
             }
             return currentDateTime;
         }
+        public static IEnumerable<Tuple<DateTime, DateTime>> Split(DateTime start, DateTime end, int chunk)
+        {
+            DateTime chunkEnd;
+            while ((chunkEnd = start.AddDays(chunk)) < end)
+            {
+                yield return Tuple.Create(start, chunkEnd);
+                start = chunkEnd.AddDays(1);
+            }
+            yield return Tuple.Create(start, start.AddDays(chunk));
+        }
         public static void DownloadXLs(SfDataGrid sfDataGrid)
         {
             var options = new ExcelExportingOptions();

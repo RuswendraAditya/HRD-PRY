@@ -88,10 +88,13 @@ namespace HRD_PRY.Attedance
 
 
 
-			string query = @"SELECT ISNULL(att.attendance_id,0) attendance_id,Employee_Number,Employee_Name, unit.unit_name, att.Date_attendance,att.Clock_in,att.Clock_out,ISNULL(CONVERT(varchar(5), DATEADD(minute, DATEDIFF(MINUTE,  Clock_in,clock_out), 0), 114),'') Duration FROM Employees emp left join Attendance att
+            //string query = @"SELECT ISNULL(att.attendance_id,0) attendance_id,Employee_Number,Employee_Name, unit.unit_name, att.Date_attendance,att.Clock_in,att.Clock_out,ISNULL(CONVERT(varchar(5), DATEADD(minute, DATEDIFF(MINUTE,  Clock_in,clock_out), 0), 114),'') Duration FROM Employees emp left join Attendance att
+            //				on emp.Employee_id = att.Employee_id LEFT JOIN MST_UNIT unit on unit.unit_id = emp.unit_id
+            //				where ISNULL(att.Date_attendance,@dateAtt) = @dateAtt";
+            string query = @"SELECT ISNULL(att.attendance_id,0) attendance_id,Employee_Number,Employee_Name, unit.unit_name, att.Date_attendance,att.Clock_in,att.Clock_out,ISNULL(DATEDIFF(hour,  Clock_in,clock_out), 0) as Duration FROM Employees emp left join Attendance att
 							on emp.Employee_id = att.Employee_id LEFT JOIN MST_UNIT unit on unit.unit_id = emp.unit_id
 							where ISNULL(att.Date_attendance,@dateAtt) = @dateAtt";
-			using (SqlCommand cmd = new SqlCommand(query, ConnUtil.connection))
+            using (SqlCommand cmd = new SqlCommand(query, ConnUtil.connection))
 			{
 				cmd.Parameters.AddWithValue("@dateAtt", dtPeriod.Value.ToShortDateString());
 				using (SqlDataAdapter da = new SqlDataAdapter(cmd))
@@ -281,6 +284,14 @@ namespace HRD_PRY.Attedance
         private void btnDownload_Click(object sender, EventArgs e)
         {
 			ClsUtil.DownloadXLs(GridAttendance);
+		}
+
+        private void btnDurasi_Click(object sender, EventArgs e)
+        {
+			FrmReportDurationAttendance formReportDurationAttendance = new FrmReportDurationAttendance();
+		formReportDurationAttendance.ShowDialog();
+			formReportDurationAttendance.Close();
+
 		}
     }
 }

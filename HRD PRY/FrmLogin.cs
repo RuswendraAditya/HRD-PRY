@@ -137,7 +137,7 @@ namespace HRD_PRY
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

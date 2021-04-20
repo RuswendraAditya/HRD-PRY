@@ -34,9 +34,10 @@ namespace HRD_PRY.Attedance
             this.dtPeriod = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCari = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnExportExcel = new Syncfusion.WinForms.Controls.SfButton();
             this.btnDownloadPhoto = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnDurasi = new Syncfusion.WinForms.Controls.SfButton();
             this.btnDownload = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnExportExcel = new Syncfusion.WinForms.Controls.SfButton();
             ((System.ComponentModel.ISupportInitialize)(this.GridAttendance)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,23 +100,6 @@ namespace HRD_PRY.Attedance
             this.btnCari.UseVisualStyleBackColor = false;
             this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
             // 
-            // btnExportExcel
-            // 
-            this.btnExportExcel.AccessibleName = "Button";
-            this.btnExportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExportExcel.BackColor = System.Drawing.Color.LightCyan;
-            this.btnExportExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnExportExcel.Location = new System.Drawing.Point(1079, 593);
-            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(98, 34);
-            this.btnExportExcel.Style.BackColor = System.Drawing.Color.LightCyan;
-            this.btnExportExcel.Style.Image = global::HRD_PRY.Properties.Resources.excel;
-            this.btnExportExcel.TabIndex = 82;
-            this.btnExportExcel.Text = "Excel";
-            this.btnExportExcel.UseVisualStyleBackColor = false;
-            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
-            // 
             // btnDownloadPhoto
             // 
             this.btnDownloadPhoto.AccessibleName = "Button";
@@ -134,6 +118,23 @@ namespace HRD_PRY.Attedance
             this.btnDownloadPhoto.UseVisualStyleBackColor = false;
             this.btnDownloadPhoto.Click += new System.EventHandler(this.btnDownloadPhoto_Click);
             // 
+            // btnDurasi
+            // 
+            this.btnDurasi.AccessibleName = "Button";
+            this.btnDurasi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDurasi.BackColor = System.Drawing.Color.White;
+            this.btnDurasi.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnDurasi.Location = new System.Drawing.Point(244, 570);
+            this.btnDurasi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDurasi.Name = "btnDurasi";
+            this.btnDurasi.Size = new System.Drawing.Size(245, 28);
+            this.btnDurasi.Style.BackColor = System.Drawing.Color.White;
+            this.btnDurasi.Style.Image = global::HRD_PRY.Properties.Resources.Durasi;
+            this.btnDurasi.TabIndex = 85;
+            this.btnDurasi.Text = "Laporan Akumulasi Jam Kerja";
+            this.btnDurasi.UseVisualStyleBackColor = false;
+            this.btnDurasi.Click += new System.EventHandler(this.btnDurasi_Click);
+            // 
             // btnDownload
             // 
             this.btnDownload.AccessibleName = "Button";
@@ -151,11 +152,29 @@ namespace HRD_PRY.Attedance
             this.btnDownload.UseVisualStyleBackColor = false;
             this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
+            // btnExportExcel
+            // 
+            this.btnExportExcel.AccessibleName = "Button";
+            this.btnExportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportExcel.BackColor = System.Drawing.Color.LightCyan;
+            this.btnExportExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.btnExportExcel.Location = new System.Drawing.Point(1079, 593);
+            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.Size = new System.Drawing.Size(98, 34);
+            this.btnExportExcel.Style.BackColor = System.Drawing.Color.LightCyan;
+            this.btnExportExcel.Style.Image = global::HRD_PRY.Properties.Resources.excel;
+            this.btnExportExcel.TabIndex = 82;
+            this.btnExportExcel.Text = "Excel";
+            this.btnExportExcel.UseVisualStyleBackColor = false;
+            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
+            // 
             // FrmAttendanceInquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 609);
+            this.Controls.Add(this.btnDurasi);
             this.Controls.Add(this.btnDownload);
             this.Controls.Add(this.btnDownloadPhoto);
             this.Controls.Add(this.btnExportExcel);
@@ -184,5 +203,6 @@ namespace HRD_PRY.Attedance
         private Syncfusion.WinForms.Controls.SfButton btnExportExcel;
         private Syncfusion.WinForms.Controls.SfButton btnDownloadPhoto;
         private Syncfusion.WinForms.Controls.SfButton btnDownload;
+        private Syncfusion.WinForms.Controls.SfButton btnDurasi;
     }
 }
