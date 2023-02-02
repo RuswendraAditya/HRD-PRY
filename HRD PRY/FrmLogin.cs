@@ -76,7 +76,7 @@ namespace HRD_PRY
         {
             if (txtUserName.Text.ToString() == "admin" && txtPassword.Text.ToString() == "admin123456")
             {
-                ClsUtil.userLogin = txtUserName.Text;
+                ClsUtil.userLogin = "-1";
                 FrmMainMenu frmMainMenu = new FrmMainMenu();
                 frmMainMenu.ShowDialog();
                 this.Hide();

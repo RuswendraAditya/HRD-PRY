@@ -125,11 +125,53 @@
     <Compile Include="Master\FrmLocationEdit.Designer.cs">
       <DependentUpon>FrmLocationEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Master\FrmPositionAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\FrmPositionAdd.Designer.cs">
+      <DependentUpon>FrmPositionAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\FrmPositionEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\FrmPositionEdit.Designer.cs">
+      <DependentUpon>FrmPositionEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\FrmPositionInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\FrmPositionInquiry.Designer.cs">
+      <DependentUpon>FrmPositionInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\FrmUnitAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\FrmUnitAdd.Designer.cs">
+      <DependentUpon>FrmUnitAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\FrmUnitEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\FrmUnitEdit.Designer.cs">
+      <DependentUpon>FrmUnitEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\FrmUnitInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\FrmUnitInquiry.Designer.cs">
+      <DependentUpon>FrmUnitInquiry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Personnel Management\FrmPersonnelInformationEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Personnel Management\FrmPersonnelInformationEdit.Designer.cs">
       <DependentUpon>FrmPersonnelInformationEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personnel Management\FrmPersonnelInformationTerminate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personnel Management\FrmPersonnelInformationTerminate.Designer.cs">
+      <DependentUpon>FrmPersonnelInformationTerminate.cs</DependentUpon>
     </Compile>
     <Compile Include="Personnel Management\FrmPersonnelnformationAdd.cs">
       <SubType>Form</SubType>
@@ -195,8 +237,29 @@
     <EmbeddedResource Include="Master\FrmLocationInquiry.resx">
       <DependentUpon>FrmLocationInquiry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Master\FrmPositionAdd.resx">
+      <DependentUpon>FrmPositionAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\FrmPositionEdit.resx">
+      <DependentUpon>FrmPositionEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\FrmPositionInquiry.resx">
+      <DependentUpon>FrmPositionInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\FrmUnitAdd.resx">
+      <DependentUpon>FrmUnitAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\FrmUnitEdit.resx">
+      <DependentUpon>FrmUnitEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\FrmUnitInquiry.resx">
+      <DependentUpon>FrmUnitInquiry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Personnel Management\FrmPersonnelInformationEdit.resx">
       <DependentUpon>FrmPersonnelInformationEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnel Management\FrmPersonnelInformationTerminate.resx">
+      <DependentUpon>FrmPersonnelInformationTerminate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personnel Management\FrmPersonnelnformationAdd.resx">
       <DependentUpon>FrmPersonnelnformationAdd.cs</DependentUpon>

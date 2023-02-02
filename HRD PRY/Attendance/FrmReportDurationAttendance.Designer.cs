@@ -71,6 +71,7 @@ namespace HRD_PRY.Attendance
             this.GridAttendance.Style.HeaderStyle.FilterIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.GridAttendance.TabIndex = 83;
             this.GridAttendance.Text = "sfDataGrid1";
+            this.GridAttendance.Click += new System.EventHandler(this.GridAttendance_Click);
             // 
             // dateTimePicker1
             // 

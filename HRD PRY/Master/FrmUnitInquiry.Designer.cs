@@ -1,7 +1,7 @@
 ﻿
 namespace HRD_PRY.Master
 {
-    partial class FrmLocationInquiry
+    partial class FrmUnitInquiry
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace HRD_PRY.Master
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLocationInquiry));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUnitInquiry));
             this.label1 = new System.Windows.Forms.Label();
             this.GridLocation = new Syncfusion.WinForms.DataGrid.SfDataGrid();
             this.btnAddLocation = new Syncfusion.WinForms.Controls.SfButton();
@@ -43,9 +43,9 @@ namespace HRD_PRY.Master
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(723, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 30);
+            this.label1.Size = new System.Drawing.Size(136, 30);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Location Master";
+            this.label1.Text = "Unit Master";
             // 
             // GridLocation
             // 
@@ -80,7 +80,7 @@ namespace HRD_PRY.Master
             this.btnAddLocation.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(109)))), ((int)(((byte)(254)))));
             this.btnAddLocation.Style.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAddLocation.TabIndex = 42;
-            this.btnAddLocation.Text = "Add Location";
+            this.btnAddLocation.Text = "Add Unit";
             this.btnAddLocation.UseVisualStyleBackColor = false;
             this.btnAddLocation.Click += new System.EventHandler(this.btnAddLocation_Click);
             // 
@@ -90,7 +90,7 @@ namespace HRD_PRY.Master
             this.btnExportExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.btnExportExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnExportExcel.Location = new System.Drawing.Point(1102, 632);
+            this.btnExportExcel.Location = new System.Drawing.Point(1041, 635);
             this.btnExportExcel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(129, 52);
@@ -101,7 +101,7 @@ namespace HRD_PRY.Master
             this.btnExportExcel.UseVisualStyleBackColor = false;
             this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
             // 
-            // FrmLocationInquiry
+            // FrmUnitInquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,7 +112,7 @@ namespace HRD_PRY.Master
             this.Controls.Add(this.GridLocation);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmLocationInquiry";
+            this.Name = "FrmUnitInquiry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Location Master";
             this.Load += new System.EventHandler(this.FrmLocationInquiry_Load);

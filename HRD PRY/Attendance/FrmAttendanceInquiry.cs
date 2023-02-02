@@ -88,13 +88,20 @@ namespace HRD_PRY.Attedance
 
 
 
-            //string query = @"SELECT ISNULL(att.attendance_id,0) attendance_id,Employee_Number,Employee_Name, unit.unit_name, att.Date_attendance,att.Clock_in,att.Clock_out,ISNULL(CONVERT(varchar(5), DATEADD(minute, DATEDIFF(MINUTE,  Clock_in,clock_out), 0), 114),'') Duration FROM Employees emp left join Attendance att
-            //				on emp.Employee_id = att.Employee_id LEFT JOIN MST_UNIT unit on unit.unit_id = emp.unit_id
-            //				where ISNULL(att.Date_attendance,@dateAtt) = @dateAtt";
-            string query = @"SELECT ISNULL(att.attendance_id,0) attendance_id,Employee_Number,Employee_Name, unit.unit_name, att.Date_attendance,att.Clock_in,att.Clock_out,ISNULL(DATEDIFF(hour,  Clock_in,clock_out), 0) as Duration FROM Employees emp left join Attendance att
-							on emp.Employee_id = att.Employee_id LEFT JOIN MST_UNIT unit on unit.unit_id = emp.unit_id
-							where ISNULL(att.Date_attendance,@dateAtt) = @dateAtt";
-            using (SqlCommand cmd = new SqlCommand(query, ConnUtil.connection))
+			//string query = @"SELECT ISNULL(att.attendance_id,0) attendance_id,Employee_Number,Employee_Name, unit.unit_name, att.Date_attendance,att.Clock_in,att.Clock_out,ISNULL(CONVERT(varchar(5), DATEADD(minute, DATEDIFF(MINUTE,  Clock_in,clock_out), 0), 114),'') Duration FROM Employees emp left join Attendance att
+			//				on emp.Employee_id = att.Employee_id LEFT JOIN MST_UNIT unit on unit.unit_id = emp.unit_id
+			//				where ISNULL(att.Date_attendance,@dateAtt) = @dateAtt";
+			//string query = @"SELECT ISNULL(att.attendance_id,0) attendance_id,Employee_Number,Employee_Name, unit.unit_name, att.Date_attendance,att.Clock_in,att.Clock_out,ISNULL(DATEDIFF(hour,  Clock_in,clock_out), 0) as Duration FROM Employees emp left join Attendance att
+			//				on emp.Employee_id = att.Employee_id AND ISNULL(att.Date_attendance,@dateAtt) = @dateAtt LEFT JOIN MST_UNIT unit on unit.unit_id = emp.unit_id
+			//				where ISNULL(emp.Termination_Date,@dateAtt) =  @dateAtt ";
+
+			string query = @"SELECT ISNULL(att.attendance_id,0) attendance_id,Employee_Number,Employee_Name, unit.unit_name, att.Date_attendance,att.Clock_in,att.Clock_out,(
+						SELECT (SELECT RIGHT('0' + CAST((SELECT ISNULL(DATEDIFF(SECOND,   Clock_in,clock_out), 0)) / 3600 AS VARCHAR),2) + ':' +
+						RIGHT('0' + CAST(((SELECT ISNULL(DATEDIFF(SECOND,   Clock_in,clock_out), 0)) / 60) % 60 AS VARCHAR),2) + ':' +
+						RIGHT('0' + CAST((SELECT ISNULL(DATEDIFF(SECOND,   Clock_in,clock_out), 0)) % 60 AS VARCHAR),2)))  as  Duration FROM Employees emp left join Attendance att
+													on emp.Employee_id = att.Employee_id AND ISNULL(att.Date_attendance,@dateAtt) = @dateAtt LEFT JOIN MST_UNIT unit on unit.unit_id = emp.unit_id
+													where ISNULL(emp.Termination_Date,@dateAtt) =  @dateAtt ";
+			using (SqlCommand cmd = new SqlCommand(query, ConnUtil.connection))
 			{
 				cmd.Parameters.AddWithValue("@dateAtt", dtPeriod.Value.ToShortDateString());
 				using (SqlDataAdapter da = new SqlDataAdapter(cmd))

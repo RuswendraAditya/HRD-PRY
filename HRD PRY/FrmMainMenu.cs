@@ -100,5 +100,15 @@ namespace HRD_PRY
             Close();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FrmUnitInquiry());
+        }
+
+        private void btnPositionInquiry_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FrmPositionInquiry());
+        }
     }
 }

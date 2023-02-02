@@ -39,7 +39,14 @@ namespace HRD_PRY
                 DefaultButtonText = "Edit Data"
 
             });
+            this.gridPersonnelInformations.Columns.Add(new GridButtonColumn()
+            {
+                MappingName = "Terminate",
+                HeaderText = "Terminate",
+                AllowDefaultButtonText = true,
+                DefaultButtonText = "Terminate"
 
+            });
             this.gridPersonnelInformations.CellButtonClick += sfDataGrid_CellButtonClick;
 
 
@@ -47,11 +54,25 @@ namespace HRD_PRY
             {
                 var rowData = (e.Record as Syncfusion.WinForms.DataGrid.DataRow).RowData as DataRowView;
                 int id = (int)rowData["Employee_id"];
-                FrmPersonnelInformationEdit frmLocationEdit = new FrmPersonnelInformationEdit(id);
+                
+                if(e.DisplayText == "Edit Data")
+                {
+                    FrmPersonnelInformationEdit frmLocationEdit = new FrmPersonnelInformationEdit(id);
 
-                frmLocationEdit.ShowDialog();
-                frmLocationEdit.Close();
+                    frmLocationEdit.ShowDialog();
+                    frmLocationEdit.Close();
+                }
+                else
+                {
+
+                    FrmPersonnelInformationTerminate frmLocationEdit = new FrmPersonnelInformationTerminate(id);
+
+                    frmLocationEdit.ShowDialog();
+                    frmLocationEdit.Close();
+                }
+
             }
+              
         }
 
         private object getData()

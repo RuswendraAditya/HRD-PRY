@@ -24,7 +24,10 @@ namespace HRD_PRY
         {
             return MsgKonfirmasi("Apakah Anda yakin data ini ingin diupdate ???");
         }
-
+        public static bool MsgUpdateTermination()
+        {
+            return MsgKonfirmasi("Apakah Anda yakin data employee ini di terminate?????");
+        }
         public static void MsgWarning(string prompt)
         {
             MessageBox.Show(prompt, "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
